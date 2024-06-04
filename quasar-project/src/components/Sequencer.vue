@@ -16,6 +16,9 @@
 
           <!-- Subdivision selection -->
           <SubdivisionSelection @subdivisionChange="changeSubdivision" :subdivisions="subdivisions"/>
+          <q-icon size="lg" class="logo">
+            <img src="~assets/images/sqncr_logo.png"  alt="" style="width: 200px; height: 200px;"/>
+          </q-icon>
         </div>
 
         <div class="Controls">
@@ -180,7 +183,7 @@ export default defineComponent({
   name : 'SequencerComp',
 
   components: {
-    TestSlider,
+
     Visualizer,
     Displays,
     Subdivision,
@@ -493,5 +496,11 @@ body {
   left: 15%;
   background: radial-gradient(circle at center left, rgba(255, 255, 255, 0.8), rgba(197, 196, 196, 0.72), rgba(255, 255, 255, 0.8));
   border-radius: 1px;
+}
+
+.logo{
+  position: relative;
+  top: 150%;
+  right: 25%;
 }
 </style>
