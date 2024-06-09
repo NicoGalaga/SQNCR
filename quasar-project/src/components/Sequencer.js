@@ -9,29 +9,9 @@ class Sequencer{
 
   // Initializes variables
   static initSequencer(){
-    // this.players = new Map();
-    // this.kits = ['808', 'hiphop', '8bit'];
-    // this.instruments = ['kick','hihat','snare', 'openhat', 'perc']; /* Add clap/other sounds? */
     this.seqInstruments = ['kick','hihat','snare', 'openhat'];
-    // this.subdivisions = ['4', '8', '16']
     this.rows = this.makeGrid(this.seqInstruments);
-
-    // Initializes effects
-    // this.configFX();
-    //
-    // // Initializes kit
-    // this.loadKit(this.kits[0]);
   }
-
-  // Loads kit based on selection
-  // static loadKit(kit){
-  //   // console.log('loadKit',kit)
-  //   this.instruments.forEach((instr, index) => {
-  //     this.players.set(instr, new Tone.Player("src/assets/samples/" + kit + "/" + instr + ".wav").chain(this.pitchShifts[index], this.phasers[index], this.delays[index], this.reverbs[index], this.gains[index], this.masterVolume, Tone.Destination));
-  //   })
-  //   // console.log('players',this.players)
-  //
-  // }
 
   // Creates rows of buttons
   static makeGrid (instruments){
@@ -53,18 +33,6 @@ class Sequencer{
     }
     return rows;
   };
-
-  // Disposes players
-  // static disposePlayers(players) {
-  //   // Dispose of all players
-  //   for (const player in players._players) {
-  //     if (players._players.hasOwnProperty(player)) {
-  //       players._players[player].dispose();
-  //     }
-  //   }
-  //   // Clear the players object
-  //   players.dispose();
-  // }
 
   // Initializes effects
   static configFX(numInstr){
@@ -100,22 +68,6 @@ class Sequencer{
     return [pitchShifts, delays, reverbs, phasers, gains]
   }
 
-  // static configPlayers(players, instruments, previousKit, kit, pitchShifts, phasers, delays, reverbs, gains, mainVolume, init) {
-  //   if (init === 0) {
-  //     instruments.forEach((instr) => {
-  //       players.player(instr + '_' + previousKit).dispose();
-  //     })
-  //   }
-  //   instruments.forEach((instr, index) => {
-  //     players.add(instr + '_' + kit, "src/assets/samples/" + kit + "/" + instr + ".wav");
-  //     console.log("Added player:", instr);
-  //     players.player(instr + '_' + kit).chain(pitchShifts[index], phasers[index], delays[index], reverbs[index],
-  //       gains[index], mainVolume, Tone.Destination);
-  //
-  //   })
-  //   console.log("(configPlayers) Players successfully added");
-  // }
-
   // Returns this.rows
   static getRows(){
     return this.rows
@@ -123,19 +75,16 @@ class Sequencer{
 
   // Returns this.kits
   static getKits(){
-    // console.log('getKits', this.kits)
     return this.kits
   }
 
   // Returns this.subdivisions
   static getSubdivisions(){
-    // console.log('getSubdivisions', this.subdivisions)
     return this.subdivisions
   }
 
   // Returns this.players
   static getPlayers(){
-    // console.log('getPlayers', this.players)
     return this.players
   }
 

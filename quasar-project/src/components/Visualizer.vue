@@ -3,10 +3,6 @@
 
     <canvas class="canvas selector " ref="visualizerCanvas"></canvas>
     <div class="screen">
-<!--
-      <div class="screen-frame"></div>
--->
-
       <div class="screen-inset"></div>
     </div>
   </div>
@@ -34,7 +30,6 @@ export default {
 
     const waveform = new Tone.Waveform(128);
     props.mainVolume.connect(waveform);
-    //waveform.toDestination()
     const screenContainer = ref(null);
 
     const resizeHandler = () => {

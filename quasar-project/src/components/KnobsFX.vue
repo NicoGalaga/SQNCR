@@ -149,23 +149,6 @@ export default {
     const delayValue = ref(0);
     const reverbValue = ref(0);
 
-    // const resetKnobValue = (resetValue) => {
-    //   switch (resetValue) {
-    //     case 'pitchValue':
-    //       pitchValue.value = 0;
-    //       break;
-    //     case 'phaserValue':
-    //       phaserValue.value = 0;
-    //       break;
-    //     case 'delayValue':
-    //       delayValue.value = 0;
-    //       break;
-    //     case 'reverbValue':
-    //       reverbValue.value = 0;
-    //       break;
-    //   }
-    // };
-
     return {
       pitchValue,
       phaserValue,

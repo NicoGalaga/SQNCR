@@ -70,7 +70,7 @@ export default defineComponent({
   },
   methods: {
     updateValue(newValue){
-      console.log("New value", newValue);
+      // console.log("New value", newValue);
       this.value = newValue; // Update the value
       this.$emit('updateValue', newValue, this.id);
     }

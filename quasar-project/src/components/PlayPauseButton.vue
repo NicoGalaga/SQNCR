@@ -38,13 +38,13 @@ export default {
     togglePlay() {
       if (!this.isPlaying) {
         this.$emit('startSeq');
-        console.log('startSeq');
+        // console.log('startSeq');
       }
     },
     togglePause() {
       if (this.isPlaying) {
         this.$emit('pauseSeq');
-        console.log('pauseSeq');
+        // console.log('pauseSeq');
       }
     }
   }
@@ -65,8 +65,6 @@ export default {
   display: inline-block;
   width: 50%;
   height: 200%;
-
-
 }
 
 .button-play,

@@ -1,5 +1,4 @@
 <template>
-  <!-- Impostazione flavio -->
   <div class="page-container">
 
     <div class="left">
@@ -10,7 +9,7 @@
       </div>
 
       <div class="bottomleft-container">
-        <div class="Selectors"> <!-- messo il div al posto della q-card per grafica -->
+        <div class="Selectors">
           <!-- Kit selection -->
           <selectKit :is-playing="playing" @stopLoop="stop" :kits="kits" @kitChange="changeKit"/>
 
@@ -73,92 +72,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Impostazione nico -->
-<!--  <div>
-    <q-card class="card">
-      <q-card-section>
-        <div class="row q-justify-between" v-for="(row,rowIndex) in rows" :key="row.id">
-          <q-card-section horizontal>
-            &lt;!&ndash; Row labels &ndash;&gt;
-            <div class="col flex justify-center">
-              <Displays1 :displayText="row.instrument"/>
-            </div>
-
-            &lt;!&ndash; Sequencer buttons &ndash;&gt;
-            <div class="col flex justify-center" v-for="(button,colIndex) in row.buttons" :key="button.id" >
-              <div>
-                <Buttons1 class="q-ma-md" @click="toggleButton(rowIndex,colIndex)" :isPlaying="playing && colIndex === beat"></Buttons1>
-              </div>
-            </div>
-
-            &lt;!&ndash; ON/OFF buttons &ndash;&gt;
-            <q-card-section>
-              <simple-button :row-index="rowIndex" class="q-ma-sm" @turnOn="turnOn" @turnOff="turnOff"></simple-button>
-            </q-card-section>
-          </q-card-section>
-        </div>
-      </q-card-section>
-      &lt;!&ndash; Waveform &ndash;&gt;
-      <div class="visualizerContainer">
-        <Visualizer :main-volume="mainVolume" :color="color"/>
-      </div>
-      &lt;!&ndash; Play and pause buttons &ndash;&gt;
-      <q-card-section>
-        <PlayPauseButton @startSeq = "play" @pauseSeq = "stop" :is-playing="playing"/>
-      </q-card-section>
-
-
-      &lt;!&ndash; Sliders &ndash;&gt;
-      <q-card class="my-card" flat bordered>
-        <q-card-section horizontal>
-
-          &lt;!&ndash; BPM slider &ndash;&gt;
-          <q-card-section>
-            <q-badge>BPM</q-badge>
-            <q-slider v-model="bpm" :min="30" :max="300" style="width: 250px"/>
-          </q-card-section>
-
-          <q-separator vertical />
-
-          &lt;!&ndash; Swing slider &ndash;&gt;
-          <q-card-section>
-            <q-badge>Swing</q-badge>
-            <q-slider v-model="swingValue" :min="0" :max="1" :step="0.05" style="width: 250px"/>
-          </q-card-section>
-
-          <q-separator vertical />
-
-          &lt;!&ndash; Volume slider &ndash;&gt;
-&lt;!&ndash;          <q-card-section>&ndash;&gt;
-&lt;!&ndash;            <q-badge>Volume</q-badge>&ndash;&gt;
-&lt;!&ndash;            <q-slider v-model="mainVolume.volume.value" :min="-40" :max="0" :step="4" style="width: 250px"/>&ndash;&gt;
-&lt;!&ndash;          </q-card-section>&ndash;&gt;
-
-        </q-card-section>
-      </q-card>
-
-      &lt;!&ndash; Effects section &ndash;&gt;
-      <q-card-section horizontal>
-        <div v-for="(row, sectionIndex) in rows">
-          <KnobSection :row="sectionIndex" :section-label="row.instrument" :update="updateEffects"/>
-        </div>
-      </q-card-section>
-
-
-      <q-card-section horizontal>
-        &lt;!&ndash; Kit selection &ndash;&gt;
-        <q-card-section>
-          <selectKit :is-playing="playing" @stopLoop="stop" :kits="kits" @kitChange="changeKit" @pauseSeq = "stop"/>
-        </q-card-section>
-
-        &lt;!&ndash; Subdivision selection &ndash;&gt;
-        <q-card-section>
-          <SubdivisionSelection @subdivisionChange="changeSubdivision" :subdivisions="subdivisions"/>
-        </q-card-section>
-      </q-card-section>
-    </q-card>
-  </div>-->
 </template>
 
 <script>
@@ -206,11 +119,7 @@ export default defineComponent({
     let currentPlayers;
     let color = 'red';
 
-
-    // const kits = ['808', 'hiphop', '8bit'];
     const kits = ['bob', 'hophip', 'byte', 't3kno', 'akustik'];
-
-    // const instruments = ['kick','hihat','snare', 'openhat', 'perc'];
     const instruments = ['kick','hihat','snare', 'openhat'];
     const subdivisions = ['4', '8', '16'];
 
@@ -253,26 +162,19 @@ export default defineComponent({
 
     // Updates BPM value if changed
     watch(bpm, (newBpm) => {
-      // console.log('BPM changed to', newBpm);
       Tone.Transport.bpm.value = newBpm;
     });
 
     // Updates swing value if changed
     watch(swingValue, (newSwing) => {
-      // Tone.Transport.swing = newSwing;
       Tone.Transport.set({ swing: newSwing });
-      console.log('Swing changed to', Tone.Transport.swing);
+      // console.log('Swing changed to', Tone.Transport.swing);
     });
-
-    // Updates volume value if changed --> NOT WORKING
-    // watch(mainVolume, (newMainVolume) => {
-    //   newMainVolume.volume.value = newMainVolume.value;
-    // });
 
     // Updates loop interval in real-time
     watchEffect(() => {
       loop.interval = selectedNoteLength.value + 'n';
-      console.log("Loop selectedNoteLength", selectedNoteLength.value);
+      // console.log("Loop selectedNoteLength", selectedNoteLength.value);
     });
 
     // Toggles sequencer button in position (row, col)
@@ -319,7 +221,6 @@ export default defineComponent({
       currentPlayers,
       color,
       instruments,
-      // myPlayers
     }
   },
   methods: {
@@ -328,8 +229,7 @@ export default defineComponent({
     },
 
     changeKit(newKit) {
-      console.log("selectedKit", this.selectedKit);
-      // Sequencer.configPlayers(this.myPlayers, this.instruments, this.selectedKit, newKit, this.pitchShifts, this.phasers, this.delays, this.reverbs, this.gains, this.mainVolume, 0);
+      // console.log("selectedKit", this.selectedKit);
       this.selectedKit = newKit;
     },
 
@@ -338,18 +238,18 @@ export default defineComponent({
       this.delays[index].wet.value = delayValue;
       this.phasers[index].wet.value = phaserValue;
       this.reverbs[index].wet.value = reverbValue;
-      console.log("Changed row", index);
-      console.log("Changed pitch to", pitchValue);
-      console.log("Changed delay to", delayValue);
-      console.log("Changed phaser to", phaserValue);
-      console.log("Changed reverb to", reverbValue);
+      // console.log("Changed row", index);
+      // console.log("Changed pitch to", pitchValue);
+      // console.log("Changed delay to", delayValue);
+      // console.log("Changed phaser to", phaserValue);
+      // console.log("Changed reverb to", reverbValue);
     },
     turnOn(row){
-      console.log("Turn on row", row)
+      // console.log("Turn on row", row)
       this.gains[row].gain.value = 1;
     },
     turnOff(row){
-      console.log("Turn off row", row)
+      // console.log("Turn off row", row)
       this.gains[row].gain.value = 0;
     },
   }
@@ -387,7 +287,6 @@ body {
   background-color: #000000;
   overflow: hidden;
   box-shadow: 4px 4px 4px #666;
-  //background-image: linear-gradient(to top left, rgba(255, 255, 255, 0.2), rgb(5, 5, 5));
   background-image:
     radial-gradient(50% 5% at 50% 1%, rgba(255, 255, 255, 0.29) 0.5%,#fff0),
     radial-gradient(110% 65% at 60% 150%, rgba(255, 255, 255, 0.85) 1%,#fff0),

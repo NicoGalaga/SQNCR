@@ -24,11 +24,9 @@
 import {defineComponent, ref} from 'vue'
 import SequencerComp from "components/Sequencer.vue";
 import * as Tone from "tone";
-import ParticleCircle from "components/ParticleCircle.vue";
 export default defineComponent({
   name: 'IndexPage',
   components: {
-    ParticleCircle,
     SequencerComp
   },
   setup() {
@@ -37,7 +35,7 @@ export default defineComponent({
     const start = () =>{
       Tone.start().then(() => {
         started.value = true
-        console.log('started')
+        // console.log('started')
       })
     }
     return {
