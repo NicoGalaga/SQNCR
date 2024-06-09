@@ -42,5 +42,5 @@ The framework of choice is Vue. Developed using HTML, JavaScript and CSS.
 * Quasar - Web UI Framework
 
 ## Team
-* Niccolò Galante - descrizione di che abbiamo fatto - niccolo.galante@mail.polimi.it
-* Flavio Ingenito - descrizione di che abbiamo fatto - flavio.ingenito@mail.polimi.it
+* Niccolò Galante - Project Management and Audio Core Developement - niccolo.galante@mail.polimi.it
+* Flavio Ingenito - Front End Developement, UI Design and Animated Graphics - flavio.ingenito@mail.polimi.it
