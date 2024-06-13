@@ -41,6 +41,10 @@ The framework of choice is Vue. Developed using HTML, JavaScript and CSS.
 * Vue.js - Web UI Framework
 * Quasar - Web UI Framework
 
+## Demo Video
+
+https://github.com/NicoGalaga/SQNCR/assets/146447959/c9e72d2a-94da-40d0-b0bb-21396883b296
+
 ## Team
 * Niccolò Galante - Project Management and Audio Core Developement - niccolo.galante@mail.polimi.it
 * Flavio Ingenito - Front End Developement, UI Design and Animated Graphics - flavio.ingenito@mail.polimi.it
