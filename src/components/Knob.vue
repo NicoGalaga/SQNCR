@@ -16,7 +16,7 @@
     <template v-slot:default>
       <div class="q-pa-md">
         <q-icon size="lg" :style="{ transform: `rotate(${rotation}deg)` }">
-          <img src="~../assets/images/knob_vector_1.svg"  alt="" style="width: 100px; height: 100px;"/>
+          <img src="../assets/knob_vector_1.svg"  alt="" style="width: 100px; height: 100px;"/>
         </q-icon>
       </div>
 

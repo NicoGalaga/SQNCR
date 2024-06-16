@@ -33,7 +33,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: DS-Digital;
-  src: url('../assets/fonts/ds_digital/DS-DIGI.TTF') format('truetype')
+  src: url('/fonts/ds_digital/DS-DIGI.TTF') format('truetype')
 }
 .screens-container {
   position: relative;

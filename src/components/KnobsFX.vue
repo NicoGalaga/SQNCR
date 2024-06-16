@@ -221,6 +221,7 @@ export default {
   font-size: 80%;
   width: 20%;
   display: flex;
+  color: black;
   position: relative;
   writing-mode: vertical-lr;
   text-orientation: upright;
@@ -259,5 +260,6 @@ export default {
   font-size: 0.6em;
   font-weight: bold;
   top: 75%;
+  color: black;
 }
 </style>

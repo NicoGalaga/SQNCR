@@ -16,7 +16,7 @@
           <!-- Subdivision selection -->
           <SubdivisionSelection @subdivisionChange="changeSubdivision" :subdivisions="subdivisions"/>
           <q-icon size="lg" class="logo">
-            <img src="~../assets/images/sqncr_logo.png"  alt="" style="width: 200px; height: 200px;"/>
+            <img src="../assets/sqncr_logo.png" alt="" style="width: 200px; height: 200px;"/>
           </q-icon>
         </div>
 
@@ -132,7 +132,7 @@ export default defineComponent({
     kits.forEach((kit) =>{
       const players = new Tone.Players();
       instruments.forEach((instr, index) => {
-        players.add(instr, "src/assets/samples/" + kit + "/" + instr + ".wav")
+        players.add(instr, "samples/" + kit + "/" + instr + ".wav")
         players.player(instr).chain(pitchShifts[index], phasers[index], delays[index], reverbs[index], gains[index], mainVolume, Tone.Destination)
       })
       sequencer.set(kit, players); // maps kit to set of Tone.Player

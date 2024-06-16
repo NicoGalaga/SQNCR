@@ -45,7 +45,7 @@ export default {
 <style scoped>
 @font-face {
   font-family: DS-Digital;
-  src: url('../assets/fonts/ds_digital/DS-DIGIB.TTF') format('truetype')
+  src: url('/fonts/ds_digital/DS-DIGIB.TTF') format('truetype')
 }
 
 .sub-container {
