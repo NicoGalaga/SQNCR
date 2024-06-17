@@ -5,7 +5,7 @@ Ideal for musicians, composers, and anyone looking to explore the world of digit
 Developed in Vue.js, a JavaScript framework, it implements the use of Tone.js, a library for audio synthesis, enabling users to combine and arrange sounds and rhythms intuitively and creatively. It includes various sound banks, which can be easily expanded to cater to a wide range of musical tastes, making it a versatile tool.
 This project is part of the university course Advanced Coding Tools and Methodologies, taught by Professor F. Bruschi, academic year 2023/2024, Politecnico di Milano.
 
-[TRY ONLINE HERE!](https://nicogalaga.github.io/SQNCR/)
+[Online version here](https://nicogalaga.github.io/SQNCR/)
 
 ![Screenshot 2024-06-04 191437](https://github.com/NicoGalaga/actam-2023-sequencer/assets/146447959/21f15c31-5007-47f8-8cd1-95daac2152c2)
 
