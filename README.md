@@ -5,9 +5,9 @@ Ideal for musicians, composers, and anyone looking to explore the world of digit
 Developed in Vue.js, a JavaScript framework, it implements the use of Tone.js, a library for audio synthesis, enabling users to combine and arrange sounds and rhythms intuitively and creatively. It includes various sound banks, which can be easily expanded to cater to a wide range of musical tastes, making it a versatile tool.
 This project is part of the university course Advanced Coding Tools and Methodologies, taught by Professor F. Bruschi, academic year 2023/2024, Politecnico di Milano.
 
+[TRY ONLINE HERE!](https://nicogalaga.github.io/SQNCR/)
 
 ![Screenshot 2024-06-04 191437](https://github.com/NicoGalaga/actam-2023-sequencer/assets/146447959/21f15c31-5007-47f8-8cd1-95daac2152c2)
-
 
 ## Features
 The heart of the sequencer implements four rows of selectable buttons, each with a different type of sound (kick, hi-hat, snare, open-hat). You can select the sound kit in the selector on the left side of the tool, where you will find five different types of drum sets. 
@@ -33,6 +33,11 @@ In the lower right part of the screen, there is a large section dedicated to eff
 The effects can be applied independently to each row of the sequencer, allowing the user to modify the sound of just one of the instruments, providing greater flexibility and versatility. 
 
 Each section related to the instrument also has a small reset button, so that during playback, the user does not have to manually set each knob back to zero. The reset button does this automatically, making it convenient and quick to configure.
+
+## Demo Video
+
+https://github.com/NicoGalaga/SQNCR/assets/146447959/0e9b9d97-bca9-44c4-b3b0-dccd3fb8cd87
+
 
 ## Framework & Dependencies
 The framework of choice is Vue. Developed using HTML, JavaScript and CSS.
